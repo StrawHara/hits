@@ -13,7 +13,7 @@ struct HitsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HitsTabView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

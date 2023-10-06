@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HistoryView.swift
 //  Hits
 //
 //  Created by Romain Le Drogo on 06/10/2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct HistoryView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -84,5 +84,5 @@ private let itemFormatter: DateFormatter = {
 }()
 
 #Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    HistoryView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
