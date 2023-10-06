@@ -15,7 +15,12 @@ struct HitsView: View {
         VStack {
             List(self.viewModel.artists) { artist in
                 HStack {
-                    Rectangle()
+                    if let artistPictureLink = URL(string: artist.pictureM) {
+                        AsyncImage(url: artistPictureLink)
+                            .frame(width: 80, height: 80)
+                            .aspectRatio(1.0, contentMode: .fill)
+                            .cornerRadius(10)
+                    }
                     VStack {
                         Text(artist.name)
                     }
