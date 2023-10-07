@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class ArtistCell: UICollectionViewCell {
     
@@ -14,14 +15,14 @@ final class ArtistCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var artistImage: UIImageView!
+    @IBOutlet weak var artistImageWidthConstraint: NSLayoutConstraint!
     
     private var artist: Artist?
-    
+    private var cancellable: AnyCancellable?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.artistImage.cornerRadius = 10
-        
+                
         self.setupCell()
     }
     
@@ -39,8 +40,22 @@ final class ArtistCell: UICollectionViewCell {
         
         self.titleLabel.text = artist.name
         self.subtitleLabel.text = "#\(artist.position)"
-        // TODO: Image loader
+        self.cancellable = self.loadImage(for: artist.pictureM).sink { [unowned self] image in self.showImage(image: image) }
     }
 
+    private func showImage(image: UIImage?) {
+        self.artistImage.image = image
+        self.artistImage.clipsToBounds = true
+        self.artistImage.layer.cornerRadius = 10
+    }
+    
+    private func loadImage(for url: String) -> AnyPublisher<UIImage?, Never> {
+        return Just(url)
+        .flatMap({ url -> AnyPublisher<UIImage?, Never> in
+            let url = URL(string: url)!
+            return ImageLoader.shared.loadImage(from: url)
+        })
+        .eraseToAnyPublisher()
+    }
     
 }

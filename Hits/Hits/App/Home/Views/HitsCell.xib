@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAB-ok-rY8" userLabel="title">
-                        <rect key="frame" x="9.9999999999999964" y="10" width="58.666666666666657" height="84"/>
+                        <rect key="frame" x="9.9999999999999964" y="10" width="58.666666666666657" height="74"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                         <color key="textColor" name="darkBlue"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJR-Zx-eJ8" userLabel="seeMore">
-                        <rect key="frame" x="615" y="60" width="72" height="34"/>
+                        <rect key="frame" x="615" y="50" width="72" height="34"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="PzF-2H-8S8"/>
                         </constraints>
@@ -38,7 +38,7 @@
                             <action selector="seeMoreDidTouchedUpInside:" destination="g0B-pq-Qul" eventType="touchUpInside" id="FgS-nx-mYY"/>
                         </connections>
                     </button>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0kO-eo-BVI" userLabel="collectionView">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0kO-eo-BVI" userLabel="collectionView">
                         <rect key="frame" x="10" y="104" width="677" height="200"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -64,7 +64,7 @@
                     <constraint firstAttribute="bottom" secondItem="0kO-eo-BVI" secondAttribute="bottom" constant="10" id="bSs-Zo-MxJ"/>
                     <constraint firstAttribute="trailing" secondItem="0kO-eo-BVI" secondAttribute="trailing" constant="10" id="bX3-w0-vXJ"/>
                     <constraint firstAttribute="trailing" secondItem="UJR-Zx-eJ8" secondAttribute="trailing" constant="10" id="tlc-Ks-amL"/>
-                    <constraint firstItem="0kO-eo-BVI" firstAttribute="top" secondItem="DAB-ok-rY8" secondAttribute="bottom" constant="10" id="wvh-Do-NVM"/>
+                    <constraint firstItem="0kO-eo-BVI" firstAttribute="top" secondItem="DAB-ok-rY8" secondAttribute="bottom" constant="20" id="wvh-Do-NVM"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

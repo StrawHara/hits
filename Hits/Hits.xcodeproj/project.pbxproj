@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552072CB2AD195AC00B5B50A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552072CA2AD195AC00B5B50A /* ImageCache.swift */; };
+		552072CD2AD195CE00B5B50A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552072CC2AD195CE00B5B50A /* ImageLoader.swift */; };
 		55440BB92AD15A52004743FB /* HitsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55440BB82AD15A52004743FB /* HitsCell.xib */; };
 		55440BBB2AD15A5B004743FB /* HitsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BBA2AD15A5B004743FB /* HitsCell.swift */; };
 		55440BC02AD16C0B004743FB /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BBF2AD16C0B004743FB /* ArtistCell.swift */; };
@@ -64,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		552072CA2AD195AC00B5B50A /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		552072CC2AD195CE00B5B50A /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		55440BB82AD15A52004743FB /* HitsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HitsCell.xib; sourceTree = "<group>"; };
 		55440BBA2AD15A5B004743FB /* HitsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsCell.swift; sourceTree = "<group>"; };
 		55440BBF2AD16C0B004743FB /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 				55440BC82AD181C5004743FB /* Coordinators */,
 				55FC64F02AD0B21B002D36D9 /* DebugPrint.swift */,
 				55FC650D2AD0BABE002D36D9 /* StoryboardBased.swift */,
+				552072CA2AD195AC00B5B50A /* ImageCache.swift */,
+				552072CC2AD195CE00B5B50A /* ImageLoader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				55440BC02AD16C0B004743FB /* ArtistCell.swift in Sources */,
 				55440BCA2AD181D4004743FB /* CoordinatorBased.swift in Sources */,
 				55FC64BF2AD0B0DC002D36D9 /* HomeViewController.swift in Sources */,
+				552072CD2AD195CE00B5B50A /* ImageLoader.swift in Sources */,
 				55FC64C52AD0B0DC002D36D9 /* Hits.xcdatamodeld in Sources */,
 				55FC65062AD0B21B002D36D9 /* DeezerService.swift in Sources */,
 				55A837C02AD14EC9006938AA /* HomeViewModel.swift in Sources */,
@@ -484,6 +491,7 @@
 				55FC65012AD0B21B002D36D9 /* Artist.swift in Sources */,
 				55A837BB2AD14350006938AA /* HistoryViewController.swift in Sources */,
 				55FC65032AD0B21B002D36D9 /* APIError.swift in Sources */,
+				552072CB2AD195AC00B5B50A /* ImageCache.swift in Sources */,
 				55A837B52AD1432E006938AA /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

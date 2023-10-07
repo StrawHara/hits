@@ -37,10 +37,7 @@ final class HitsCell: UITableViewCell {
     private func setupCollectionView() {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        
-        //        self.collectionView.alwaysBounceVertical = true
-        //        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
+                
         self.collectionView.register(UINib(nibName: ArtistCell.identifier, bundle: nil),
                                      forCellWithReuseIdentifier: ArtistCell.identifier)
     }
@@ -75,24 +72,19 @@ extension HitsCell: UICollectionViewDelegate {
 extension HitsCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dprint("❌❌❌❌❌")
-        dprint(self.viewModel?.artists.count ?? 0)
         return self.viewModel?.artists.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
-        dprint("❌❌❌❌❌1")
         
         guard let artist = self.viewModel?.artists[indexPath.row],
               let artistCell = self.collectionView.dequeueReusableCell(withReuseIdentifier: ArtistCell.identifier, for: indexPath) as? ArtistCell else {
             return cell
         }
-        dprint("❌❌❌❌❌2")
-        
+
         artistCell.setup(artist: artist)
         cell = artistCell
-        dprint("❌❌❌❌❌3")
         
         return cell
     }
@@ -105,7 +97,7 @@ extension HitsCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 70)
+        return CGSize(width: 175, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -117,7 +109,7 @@ extension HitsCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout
                         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 50.0
+        return 25.0
     }
     
 }

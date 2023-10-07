@@ -26,16 +26,16 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOl-cV-GL2">
-                        <rect key="frame" x="50" y="-2" width="311" height="54"/>
+                        <rect key="frame" x="60" y="-2" width="301" height="54"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bT5-LI-rOT">
-                                <rect key="frame" x="5" y="5" width="301" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="bT5-LI-rOT">
+                                <rect key="frame" x="5" y="5" width="291" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4s-ud-6bt">
-                                <rect key="frame" x="5" y="31" width="301" height="18"/>
+                                <rect key="frame" x="5" y="31" width="291" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                     <constraint firstItem="vOl-cV-GL2" firstAttribute="centerY" secondItem="QIN-Xd-IdQ" secondAttribute="centerY" id="1T4-2O-4FW"/>
                     <constraint firstItem="QIN-Xd-IdQ" firstAttribute="leading" secondItem="CE3-r5-UNb" secondAttribute="leading" id="6YC-LS-i8L"/>
                     <constraint firstAttribute="trailing" secondItem="vOl-cV-GL2" secondAttribute="trailing" id="Cne-AY-IQ2"/>
-                    <constraint firstItem="vOl-cV-GL2" firstAttribute="leading" secondItem="QIN-Xd-IdQ" secondAttribute="trailing" id="CoO-vO-mLf"/>
+                    <constraint firstItem="vOl-cV-GL2" firstAttribute="leading" secondItem="QIN-Xd-IdQ" secondAttribute="trailing" constant="10" id="CoO-vO-mLf"/>
                     <constraint firstItem="QIN-Xd-IdQ" firstAttribute="top" secondItem="CE3-r5-UNb" secondAttribute="top" id="rXB-D3-l0s"/>
                     <constraint firstAttribute="bottom" secondItem="QIN-Xd-IdQ" secondAttribute="bottom" id="rz2-Dv-sI2"/>
                 </constraints>
@@ -66,6 +66,7 @@
             <size key="customSize" width="361" height="50"/>
             <connections>
                 <outlet property="artistImage" destination="QIN-Xd-IdQ" id="oHC-Kz-MJv"/>
+                <outlet property="artistImageWidthConstraint" destination="Jxw-vN-vlI" id="LW0-Aa-DXH"/>
                 <outlet property="subtitleLabel" destination="m4s-ud-6bt" id="bGt-oR-bdV"/>
                 <outlet property="titleLabel" destination="bT5-LI-rOT" id="lrc-ih-yEb"/>
             </connections>
