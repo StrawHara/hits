@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note.list" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iEb-GV-0Ds">
-                                <rect key="frame" x="96.666666666666686" y="327" width="200" height="198.66666666666674"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iEb-GV-0Ds">
+                                <rect key="frame" x="96.666666666666686" y="326" width="200" height="200"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="2vk-jB-ecc"/>
@@ -26,13 +26,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Only the best Hits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y71-gz-4VZ">
-                                <rect key="frame" x="10" y="576" width="373" height="21"/>
+                                <rect key="frame" x="125.66666666666669" y="576" width="142" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoE-bD-8dn">
-                                <rect key="frame" x="10" y="235" width="373" height="41"/>
+                                <rect key="frame" x="167.33333333333334" y="235" width="58.666666666666657" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -43,13 +43,13 @@
                         <constraints>
                             <constraint firstItem="iEb-GV-0Ds" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Kck-zf-yj9"/>
                             <constraint firstItem="iEb-GV-0Ds" firstAttribute="top" secondItem="xoE-bD-8dn" secondAttribute="bottom" constant="50" id="TZH-yG-C3C"/>
-                            <constraint firstItem="y71-gz-4VZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WPx-Q3-ceD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y71-gz-4VZ" secondAttribute="trailing" constant="10" id="Wxa-Zp-ryz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xoE-bD-8dn" secondAttribute="trailing" constant="10" id="lxN-eU-kqV"/>
+                            <constraint firstItem="y71-gz-4VZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WPx-Q3-ceD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y71-gz-4VZ" secondAttribute="trailing" constant="10" id="Wxa-Zp-ryz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xoE-bD-8dn" secondAttribute="trailing" constant="10" id="lxN-eU-kqV"/>
                             <constraint firstItem="y71-gz-4VZ" firstAttribute="top" secondItem="iEb-GV-0Ds" secondAttribute="bottom" constant="50" id="n7g-AM-ZP0"/>
                             <constraint firstItem="xoE-bD-8dn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tuM-PZ-iYM"/>
-                            <constraint firstItem="xoE-bD-8dn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="wUz-4B-HYX"/>
-                            <constraint firstItem="iEb-GV-0Ds" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xBk-yH-1Ue"/>
+                            <constraint firstItem="xoE-bD-8dn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="wUz-4B-HYX"/>
+                            <constraint firstItem="iEb-GV-0Ds" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ymT-1Z-fc8"/>
                             <constraint firstItem="y71-gz-4VZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zpU-OI-AAu"/>
                         </constraints>
                     </view>
@@ -60,9 +60,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <image name="logo" width="500" height="500"/>
         <namedColor name="navy">
-            <color red="0.090196078431372548" green="0.41960784313725491" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.090000003576278687" green="0.41999998688697815" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

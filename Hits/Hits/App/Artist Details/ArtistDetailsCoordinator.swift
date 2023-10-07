@@ -10,7 +10,7 @@ import UIKit
 
 protocol ArtistDetailsCoordinatorDelegate: AnyObject {
     func playSong(song: Song)
-    func addToPlayList(songs: [Song])
+    func addToPlayingQueue(songs: [Song])
 }
 
 final class ArtistDetailsCoordinator: NSObject {
@@ -56,8 +56,8 @@ extension ArtistDetailsCoordinator: ArtistDetailsCoordinatorDelegate {
         self.audioManager.play(song: song)
     }
     
-    func addToPlayList(songs: [Song]) {
-        self.audioManager.addToPlaylist(songs: songs)
+    func addToPlayingQueue(songs: [Song]) {
+        self.audioManager.addToPlayingQueue(songs: songs)
     }
     
 }

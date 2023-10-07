@@ -18,9 +18,9 @@ final class HomeViewController: UIViewController, StoryboardBased {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(self.handleRefresh(_:)),
                                  for: UIControl.Event.valueChanged)
-        refreshControl.tintColor = UIColor.darkBlue
+        refreshControl.tintColor = UIColor.hDarkBlue
         refreshControl.attributedTitle = NSAttributedString(string: "Refresh", // TODO: Trad
-                                                            attributes: [.foregroundColor: UIColor.darkBlue])
+                                                            attributes: [.foregroundColor: UIColor.hDarkBlue])
         return refreshControl
     }()
     
@@ -87,6 +87,7 @@ extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dprint("didSelectRowAt: \(indexPath.row)")
+        // TODO: Show all chart songs
     }
     
 }
@@ -104,7 +105,7 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
 
-        guard let hitViewModel = self.viewModel?.hits[indexPath.row],
+        guard let hitViewModel = self.viewModel?.hits[safe: indexPath.row],
               let hitsCell = self.tableView.dequeueReusableCell(withIdentifier: HitsCell.identifier, for: indexPath) as? HitsCell else {
             return cell
         }

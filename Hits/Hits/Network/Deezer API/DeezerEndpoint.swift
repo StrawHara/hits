@@ -43,8 +43,10 @@ enum DeezerEndpoint: APIEndpoint {
     
     var parameters: [String: Any]? {
         switch self {
-        case .getHitsArtists, .getArtistTopSongs:
-            return ["page": 1, "limit": 10]
+        case .getHitsArtists:
+            return ["page": 1, "limit": 20]
+        case .getArtistTopSongs:
+            return ["page": 1, "limit": 50]
         default:
             return [:]
         }

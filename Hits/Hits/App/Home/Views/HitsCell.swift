@@ -83,7 +83,7 @@ extension HitsCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         
-        guard let artist = self.viewModel?.artists[indexPath.row],
+        guard let artist = self.viewModel?.artists[safe: indexPath.row],
               let artistCell = self.collectionView.dequeueReusableCell(withReuseIdentifier: ArtistCell.identifier, for: indexPath) as? ArtistCell else {
             return cell
         }
