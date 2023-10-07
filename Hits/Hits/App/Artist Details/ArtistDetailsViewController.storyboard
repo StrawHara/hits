@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Artist Details View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ArtistDetailsViewController" customModule="Hits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bIH-v3-hXl">
+                                <rect key="frame" x="71.666666666666686" y="79" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="0uS-MJ-4Op"/>
+                                    <constraint firstAttribute="height" constant="250" id="NMJ-3M-H42"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1P-oq-NRJ">
+                                <rect key="frame" x="20" y="410" width="143.66666666666666" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ylZ-u0-8P2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="play.circle" catalog="system" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonDidTouchedUp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tf5-2V-q2Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkF-DO-up2">
+                                <rect key="frame" x="183.66666666666663" y="418" width="189.33333333333337" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Shuffle">
+                                    <imageReference key="image" image="shuffle.circle" catalog="system" symbolScale="large"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="shuffleButtonDidTouchedUp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="otb-15-INC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHB-N4-Ufc">
+                                <rect key="frame" x="20" y="349" width="353" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5AE-vs-hcd">
+                                <rect key="frame" x="20" y="538" width="353" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwP-Us-46T">
+                                <rect key="frame" x="20" y="480" width="353" height="38"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D1P-oq-NRJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="08P-As-HGF"/>
+                            <constraint firstItem="XwP-Us-46T" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="4fe-N7-ExK"/>
+                            <constraint firstItem="5AE-vs-hcd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="4hs-Xk-8Gj"/>
+                            <constraint firstItem="XwP-Us-46T" firstAttribute="top" secondItem="D1P-oq-NRJ" secondAttribute="bottom" constant="20" id="4px-By-Rrm"/>
+                            <constraint firstItem="vHB-N4-Ufc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="6co-Nb-PeB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XwP-Us-46T" secondAttribute="trailing" constant="20" id="DHF-GG-1FT"/>
+                            <constraint firstItem="lkF-DO-up2" firstAttribute="height" secondItem="D1P-oq-NRJ" secondAttribute="height" multiplier="0.686667" id="Diz-Qx-Rik"/>
+                            <constraint firstItem="bIH-v3-hXl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="FyX-kF-l5S"/>
+                            <constraint firstItem="bIH-v3-hXl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="JTH-7w-1IO"/>
+                            <constraint firstItem="D1P-oq-NRJ" firstAttribute="width" secondItem="lkF-DO-up2" secondAttribute="width" multiplier="0.757764" id="Jni-fT-nLn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lkF-DO-up2" secondAttribute="trailing" constant="20" id="K8i-bS-2LP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bIH-v3-hXl" secondAttribute="trailing" constant="20" id="Ku1-W7-g7H"/>
+                            <constraint firstItem="vHB-N4-Ufc" firstAttribute="top" secondItem="bIH-v3-hXl" secondAttribute="bottom" constant="20" id="L4E-s4-yPX"/>
+                            <constraint firstItem="D1P-oq-NRJ" firstAttribute="top" secondItem="vHB-N4-Ufc" secondAttribute="bottom" constant="20" id="MXb-ev-Q2s"/>
+                            <constraint firstItem="5AE-vs-hcd" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="20" id="Xup-5c-xgQ"/>
+                            <constraint firstItem="lkF-DO-up2" firstAttribute="centerY" secondItem="D1P-oq-NRJ" secondAttribute="centerY" id="c1e-cS-cNn"/>
+                            <constraint firstItem="lkF-DO-up2" firstAttribute="leading" secondItem="D1P-oq-NRJ" secondAttribute="trailing" constant="20" id="dSt-cd-eb2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vHB-N4-Ufc" secondAttribute="trailing" constant="20" id="fa2-Ir-HBy"/>
+                            <constraint firstItem="bIH-v3-hXl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="itq-fT-nse"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5AE-vs-hcd" secondAttribute="trailing" constant="20" id="qOb-tF-LyG"/>
+                            <constraint firstItem="5AE-vs-hcd" firstAttribute="top" secondItem="XwP-Us-46T" secondAttribute="bottom" constant="20" id="wV3-1v-3s9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="artistCoverImage" destination="bIH-v3-hXl" id="wSQ-0M-nSs"/>
+                        <outlet property="artistNameLabel" destination="vHB-N4-Ufc" id="bBt-g2-nZm"/>
+                        <outlet property="playButton" destination="D1P-oq-NRJ" id="uHq-MP-7Qi"/>
+                        <outlet property="shuffleButton" destination="lkF-DO-up2" id="fJN-kk-rpn"/>
+                        <outlet property="tableView" destination="5AE-vs-hcd" id="sii-1W-RJ5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="-23.239436619718312"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play.circle" catalog="system" width="128" height="123"/>
+        <image name="shuffle.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

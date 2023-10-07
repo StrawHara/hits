@@ -33,8 +33,8 @@ public final class ImageLoader {
             .handleEvents(receiveOutput: {[unowned self] image in
                 guard let image = image else { return }
                 self.cache[url] = image
+//                dprint("Image loading \(url):")
             })
-            .print("Image loading \(url):")
             .subscribe(on: backgroundQueue)
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()

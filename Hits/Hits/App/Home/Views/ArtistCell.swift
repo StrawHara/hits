@@ -39,7 +39,14 @@ final class ArtistCell: UICollectionViewCell {
         }
         
         self.titleLabel.text = artist.name
-        self.subtitleLabel.text = "#\(artist.position)"
+        
+        if let position = artist.position, position > 0 {
+            self.subtitleLabel.text = "#\(position)"
+            self.subtitleLabel.isHidden = false
+        } else {
+            self.subtitleLabel.isHidden = true
+        }
+        
         self.cancellable = self.loadImage(for: artist.pictureM).sink { [unowned self] image in self.showImage(image: image) }
     }
 

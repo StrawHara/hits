@@ -7,18 +7,23 @@
 
 import UIKit
 
+protocol HomeCoordinatorDelegate: AnyObject {
+    func showArtistDetails(artistID: Int)
+}
+
 final class HomeCoordinator: NSObject {
     
     private(set) var homeNav: UINavigationController
     
     private let homeVC: HomeViewController
     private var homeVM: HomeViewModel?
-    //    private let artistDetailsVC:
 
     private var deezerService: DeezerService
+    private var audioManager: AudioManager
     
-    init(deezerService: DeezerService) {
+    init(deezerService: DeezerService, audioManager: AudioManager) {
         self.deezerService = deezerService
+        self.audioManager = audioManager
         
         self.homeVC = HomeViewController.instantiate()
         self.homeNav = UINavigationController(rootViewController: self.homeVC)
@@ -34,7 +39,7 @@ final class HomeCoordinator: NSObject {
     // MARK: Coordinator implementation
     func start() {
         self.homeVM = HomeViewModel(service: self.deezerService, delegate: self)
-        self.homeVC.setup(viewModel: self.homeVM)
+        self.homeVC.setup(viewModel: self.homeVM, delegate: self)
     }
 
 }
@@ -42,5 +47,12 @@ final class HomeCoordinator: NSObject {
 extension HomeCoordinator: HomeViewModelDelegate {
     func didUpdate() {
         self.homeVC.refresh()
+    }
+}
+
+extension HomeCoordinator: HomeCoordinatorDelegate {
+    func showArtistDetails(artistID: Int) {
+        let artistCoordinator = ArtistDetailsCoordinator(deezerService: self.deezerService, audioManager: self.audioManager, parentViewController: self.homeNav)
+        artistCoordinator.showArtist(artistID: artistID)
     }
 }

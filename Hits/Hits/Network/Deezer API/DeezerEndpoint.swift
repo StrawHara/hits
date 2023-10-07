@@ -7,10 +7,12 @@
 
 import Foundation
 
-enum UserEndpoint: APIEndpoint {
+enum DeezerEndpoint: APIEndpoint {
     
     case getHitsArtists(hitID: Int)
-    
+    case getArtist(artistID: Int)
+    case getArtistTopSongs(artistID: Int)
+
     var baseURL: URL {
         return URL(string: "https://api.deezer.com/")!
     }
@@ -19,27 +21,32 @@ enum UserEndpoint: APIEndpoint {
         switch self {
         case .getHitsArtists(let id):
             return "chart/\(id)/artists"
+        case .getArtist(let artistID):
+            return "artist/\(artistID)"
+        case .getArtistTopSongs(let artistID):
+            return "artist/\(artistID)/top"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getHitsArtists:
+        case .getHitsArtists, .getArtist, .getArtistTopSongs:
             return .get
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .getHitsArtists:
-            return ["Authorization": "Bearer TOKEN"]
+        default: [:]
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .getHitsArtists:
+        case .getHitsArtists, .getArtistTopSongs:
             return ["page": 1, "limit": 10]
+        default:
+            return [:]
         }
     }
 }

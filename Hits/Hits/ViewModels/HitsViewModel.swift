@@ -32,9 +32,8 @@ final class HitsViewModel: ObservableObject {
         self.service.getHitsArtists(hitID: self.hitID)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { data in
-                dprint(data)
             }, receiveValue: {[weak self] data in
-                dprint(data)
+//                dprint(data)
                 self?.artists = data
                 self?.delegate?.didUpdate()
             }).store(in: &cancellables)

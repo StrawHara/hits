@@ -14,7 +14,7 @@ struct Artist: Decodable, Identifiable {
     let name: String
 
     let link: String
-    let position: Int
+    let position: Int?
  
     let picture: String
     let pictureS: String
@@ -53,7 +53,7 @@ struct Artist: Decodable, Identifiable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         self.link = try container.decode(String.self, forKey: .link)
-        self.position = try container.decode(Int.self, forKey: .position)
+        self.position = try container.decodeIfPresent(Int.self, forKey: .position)
         
         self.picture = try container.decode(String.self, forKey: .picture)
         self.pictureS = try container.decode(String.self, forKey: .pictureS)

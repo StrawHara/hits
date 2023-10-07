@@ -10,6 +10,7 @@ import UIKit
 final class HomeViewController: UIViewController, StoryboardBased {
     
     private var viewModel: HomeViewModel?
+    private var delegate: HomeCoordinatorDelegate?
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -39,8 +40,9 @@ final class HomeViewController: UIViewController, StoryboardBased {
     }
     
     // MARK: Public
-    func setup(viewModel: HomeViewModel?) {
+    func setup(viewModel: HomeViewModel?, delegate: HomeCoordinatorDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
     }
     
     // MARK: Private
@@ -107,7 +109,7 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         }
         
-        hitsCell.setup(viewModel: hitViewModel)
+        hitsCell.setup(viewModel: hitViewModel, delegate: self.delegate)
         cell = hitsCell
         
         return cell

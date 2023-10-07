@@ -17,7 +17,8 @@ final class HitsCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var viewModel: HitsViewModel?
-    
+    private var delegate: HomeCoordinatorDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -28,8 +29,10 @@ final class HitsCell: UITableViewCell {
     }
     
     // MARK: Public
-    func setup(viewModel: HitsViewModel) {
+    func setup(viewModel: HitsViewModel, delegate: HomeCoordinatorDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
+        
         self.setupCell()
     }
     
@@ -47,9 +50,9 @@ final class HitsCell: UITableViewCell {
             return
         }
         
-        self.title.text = "France"  // TODO: name
+        self.title.text = "Hits #\(viewModel.hitID)"  // TODO: name?
         self.seeMore.titleLabel?.text = "See all" // TODO: trad
-        dprint(viewModel.artists.count)
+
         self.collectionView.reloadData()
     }
     
@@ -63,7 +66,9 @@ final class HitsCell: UITableViewCell {
 extension HitsCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        dprint("didSelectItemAt: \(indexPath.row)")
+        if let artistID = self.viewModel?.artists[safe: indexPath.row]?.id {
+            self.delegate?.showArtistDetails(artistID: artistID)
+        }
     }
     
 }

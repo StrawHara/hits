@@ -29,12 +29,13 @@ final class AppCoordinator: NSObject {
     private let historyVC: HistoryViewController
 
     private var deezerService = DeezerService()
+    private var audioManager = AudioManager()
 
     // MARK: Init
     init(window: UIWindow?) {
         self.window = window
         
-        self.homeCoordinator = HomeCoordinator(deezerService: self.deezerService)
+        self.homeCoordinator = HomeCoordinator(deezerService: self.deezerService, audioManager: self.audioManager)
         
         self.playerVC = PlayerViewController.instantiate()
         self.playerNav = UINavigationController(rootViewController: self.playerVC)
