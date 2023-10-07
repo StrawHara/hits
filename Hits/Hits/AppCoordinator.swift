@@ -8,35 +8,49 @@
 import Foundation
 import UIKit
 
-class AppCoordinator: NSObject {
-    
-    private enum TabbarItem: Int {
-        case hits = 0
-        case player
-        case history
-    }
+enum TabbarItem: Int {
+    case hits = 0
+    case player
+    case history
+}
+
+final class AppCoordinator: NSObject {
     
     private var window: UIWindow?
     
     private var tabbarController: UITabBarController
 
-    private var homeNav: UINavigationController
-    private let homeVC: HomeViewController
+    private let homeCoordinator: HomeCoordinator
 
-    private var webServices = DeezerService()
+    private var playerNav: UINavigationController
+    private let playerVC: PlayerViewController
+
+    private var historyNav: UINavigationController
+    private let historyVC: HistoryViewController
+
+    private var deezerService = DeezerService()
 
     // MARK: Init
     init(window: UIWindow?) {
         self.window = window
         
-        self.homeVC = HomeViewController.instantiate()
-        self.homeNav = UINavigationController(rootViewController: self.homeVC)
-        self.homeNav.tabBarItem = UITabBarItem(title: "Hits",
-                                               image: UIImage(systemName: "chart"),
-                                               tag: TabbarItem.hits.rawValue)
+        self.homeCoordinator = HomeCoordinator(deezerService: self.deezerService)
+        
+        self.playerVC = PlayerViewController.instantiate()
+        self.playerNav = UINavigationController(rootViewController: self.playerVC)
+        self.playerNav.tabBarItem = UITabBarItem(title: "Player", // TODO: Trad
+                                                 image: UIImage(systemName: "play.circle.fill"), // TODO: pause.circle.fill
+                                                 tag: TabbarItem.player.rawValue)
+
+        self.historyVC = HistoryViewController.instantiate()
+        self.historyNav = UINavigationController(rootViewController: self.historyVC)
+        self.historyNav.tabBarItem = UITabBarItem(title: "History", // TODO: Trad
+                                               image: UIImage(systemName: "list.triangle"),
+                                               tag: TabbarItem.history.rawValue)
+
         // MARK: Tabbar
         self.tabbarController = UITabBarController()
-        self.tabbarController.viewControllers = [self.homeNav]
+        self.tabbarController.viewControllers = [self.homeCoordinator.homeNav, self.playerNav, self.historyNav]
         self.tabbarController.tabBar.contentMode = .scaleAspectFill
         self.tabbarController.tabBar.clipsToBounds = false
 
@@ -44,12 +58,6 @@ class AppCoordinator: NSObject {
     }
     
     // MARK: Coordinator implementation
-    func start() {
-        self.launch()
-    }
-    
-    fileprivate func launch() {
-        
-    }
-    
+    func start() {}
+
 }

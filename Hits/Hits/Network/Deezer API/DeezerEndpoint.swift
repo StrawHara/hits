@@ -9,7 +9,7 @@ import Foundation
 
 enum UserEndpoint: APIEndpoint {
     
-    case getArtists
+    case getHitsArtists(hitID: Int)
     
     var baseURL: URL {
         return URL(string: "https://api.deezer.com/")!
@@ -17,28 +17,28 @@ enum UserEndpoint: APIEndpoint {
     
     var path: String {
         switch self {
-        case .getArtists:
-            return "chart/0/artists"
+        case .getHitsArtists(let id):
+            return "chart/\(id)/artists"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getArtists:
+        case .getHitsArtists:
             return .get
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .getArtists:
+        case .getHitsArtists:
             return ["Authorization": "Bearer TOKEN"]
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .getArtists:
+        case .getHitsArtists:
             return ["page": 1, "limit": 10]
         }
     }

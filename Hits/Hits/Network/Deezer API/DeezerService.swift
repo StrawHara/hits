@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 protocol DeezerServiceProtocol {
-    func getArtists() -> AnyPublisher<[Artist], Error>
+    func getHitsArtists(hitID: Int) -> AnyPublisher<[Artist], Error>
 }
 
 final class DeezerService: DeezerServiceProtocol {
     let apiClient = URLSessionAPIClient<UserEndpoint>()
     
-    func getArtists() -> AnyPublisher<[Artist], Error> {
-        return apiClient.requestPageContent(.getArtists)
+    func getHitsArtists(hitID: Int) -> AnyPublisher<[Artist], Error> {
+        return apiClient.requestPageContent(.getHitsArtists(hitID: hitID))
     }
 }

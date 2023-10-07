@@ -8,27 +8,35 @@
 import Foundation
 import Combine
 
-final class ArtistsViewModel: ObservableObject {
+protocol HitsViewModelDelegate: AnyObject {
+  func didUpdate()
+}
+
+final class HitsViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    let service: DeezerServiceProtocol
+    private let service: DeezerServiceProtocol
+    private(set) var hitID: Int
+    private(set) var delegate: HitsViewModelDelegate?
     
-    @Published var artists: [Artist] = []
+    private(set) var artists: [Artist] = []
     
-    init(service: DeezerServiceProtocol) {
+    init(service: DeezerServiceProtocol, hitID: Int, delegate: HitsViewModelDelegate? = nil) {
         self.service = service
+        self.hitID = hitID
+        self.delegate = delegate
     }
     
     func fetchArtists() {
-        self.service.getArtists()
+        self.service.getHitsArtists(hitID: self.hitID)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { data in
-                print(data)
-                
+                dprint(data)
             }, receiveValue: {[weak self] data in
-                print(data)
+                dprint(data)
                 self?.artists = data
+                self?.delegate?.didUpdate()
             }).store(in: &cancellables)
     }
     
