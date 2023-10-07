@@ -51,6 +51,7 @@ final class HomeViewController: UIViewController, StoryboardBased {
         self.tableView.delegate = self
         
         self.tableView.addSubview(self.refreshControl)
+        self.tableView.separatorColor = .clear
         
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 200
