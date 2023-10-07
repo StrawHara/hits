@@ -18,9 +18,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="697" height="314"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAB-ok-rY8" userLabel="title">
-                        <rect key="frame" x="10" y="10" width="50" height="74"/>
-                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="31"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hits" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAB-ok-rY8" userLabel="title">
+                        <rect key="frame" x="9.9999999999999964" y="10" width="58.666666666666657" height="74"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                         <color key="textColor" name="navy"/>
                         <nil key="highlightedColor"/>
                     </label>
