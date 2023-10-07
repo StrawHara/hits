@@ -57,6 +57,9 @@
 		55FC65082AD0B21B002D36D9 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC64FE2AD0B21B002D36D9 /* APIEndpoint.swift */; };
 		55FC650C2AD0BA02002D36D9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC650B2AD0BA02002D36D9 /* AppCoordinator.swift */; };
 		55FC650E2AD0BABE002D36D9 /* StoryboardBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC650D2AD0BABE002D36D9 /* StoryboardBased.swift */; };
+		55FCB4C12AD2074700E4BF17 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB4C02AD2074700E4BF17 /* CoreDataStack.swift */; };
+		55FCB4C32AD2086F00E4BF17 /* PlayedSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB4C22AD2086F00E4BF17 /* PlayedSong.swift */; };
+		55FCB4C52AD209AB00E4BF17 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB4C42AD209AB00E4BF17 /* Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,9 @@
 		55FC64FE2AD0B21B002D36D9 /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		55FC650B2AD0BA02002D36D9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		55FC650D2AD0BABE002D36D9 /* StoryboardBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardBased.swift; sourceTree = "<group>"; };
+		55FCB4C02AD2074700E4BF17 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		55FCB4C22AD2086F00E4BF17 /* PlayedSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedSong.swift; sourceTree = "<group>"; };
+		55FCB4C42AD209AB00E4BF17 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +340,7 @@
 				552072CA2AD195AC00B5B50A /* ImageCache.swift */,
 				552072CC2AD195CE00B5B50A /* ImageLoader.swift */,
 				55272AF72AD1B5E00064C091 /* AudioManager.swift */,
+				55FCB4C02AD2074700E4BF17 /* CoreDataStack.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 				55FC64F42AD0B21B002D36D9 /* Artist.swift */,
 				55FC64F52AD0B21B002D36D9 /* Page.swift */,
 				55272AF52AD1B2910064C091 /* Song.swift */,
+				55FCB4C22AD2086F00E4BF17 /* PlayedSong.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,6 +369,7 @@
 			children = (
 				55440BC32AD16D0C004743FB /* View.swift */,
 				552072D02AD1A25E00B5B50A /* Collection.swift */,
+				55FCB4C42AD209AB00E4BF17 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -531,6 +540,7 @@
 				552072CD2AD195CE00B5B50A /* ImageLoader.swift in Sources */,
 				55272B042AD1E2780064C091 /* ArtistHeadCell.swift in Sources */,
 				55FC64C52AD0B0DC002D36D9 /* Hits.xcdatamodeld in Sources */,
+				55FCB4C52AD209AB00E4BF17 /* Int.swift in Sources */,
 				55FC65062AD0B21B002D36D9 /* DeezerService.swift in Sources */,
 				55A837C02AD14EC9006938AA /* HomeViewModel.swift in Sources */,
 				55440BC72AD18153004743FB /* HomeCoordinator.swift in Sources */,
@@ -544,6 +554,7 @@
 				55272AFD2AD1C4180064C091 /* SongCell.swift in Sources */,
 				55440BCE2AD181EA004743FB /* StateMachine.swift in Sources */,
 				552072D42AD1A45B00B5B50A /* ArtistDetailsViewController.swift in Sources */,
+				55FCB4C32AD2086F00E4BF17 /* PlayedSong.swift in Sources */,
 				55A837BE2AD14B52006938AA /* HitsDesignableGradient.swift in Sources */,
 				55FC65052AD0B21B002D36D9 /* DeezerEndpoint.swift in Sources */,
 				55FC65082AD0B21B002D36D9 /* APIEndpoint.swift in Sources */,
@@ -551,6 +562,7 @@
 				55FC650E2AD0BABE002D36D9 /* StoryboardBased.swift in Sources */,
 				55FC64BB2AD0B0DC002D36D9 /* AppDelegate.swift in Sources */,
 				55FC64BD2AD0B0DC002D36D9 /* SceneDelegate.swift in Sources */,
+				55FCB4C12AD2074700E4BF17 /* CoreDataStack.swift in Sources */,
 				552072D12AD1A25E00B5B50A /* Collection.swift in Sources */,
 				55FC64FF2AD0B21B002D36D9 /* DebugPrint.swift in Sources */,
 				55FC65072AD0B21B002D36D9 /* HTTPMethod.swift in Sources */,

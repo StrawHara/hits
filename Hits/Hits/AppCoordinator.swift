@@ -30,13 +30,16 @@ final class AppCoordinator: NSObject {
 
     private var deezerService = DeezerService()
     private var audioManager = AudioManager()
+    private var coreDataStack = CoreDataStack()
 
     // MARK: Init
     init(window: UIWindow?) {
         self.window = window
         
-        self.homeCoordinator = HomeCoordinator(deezerService: self.deezerService, audioManager: self.audioManager)
-        
+        self.audioManager.setup(coreDataStack: self.coreDataStack)
+
+        self.homeCoordinator = HomeCoordinator(deezerService: self.deezerService, audioManager: self.audioManager)        
+
         self.playerVC = PlayerViewController.instantiate()
         self.playerNav = UINavigationController(rootViewController: self.playerVC)
         self.playerNav.tabBarItem = UITabBarItem(title: "Player", // TODO: Trad
@@ -44,6 +47,7 @@ final class AppCoordinator: NSObject {
                                                  tag: TabbarItem.player.rawValue)
 
         self.historyVC = HistoryViewController.instantiate()
+        self.historyVC.setup(coreDataStack: self.coreDataStack, audioManager: self.audioManager)
         self.historyNav = UINavigationController(rootViewController: self.historyVC)
         self.historyNav.tabBarItem = UITabBarItem(title: "History", // TODO: Trad
                                                image: UIImage(systemName: "list.triangle"),

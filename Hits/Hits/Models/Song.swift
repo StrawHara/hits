@@ -10,16 +10,21 @@ import Foundation
 struct Song: Decodable, Identifiable {
     
     let id: Int
-    let readable: Bool
     let title: String
-    
-    let link: String
     let preview: String
     
-    let duration: Int
-    let rank: Int
-    
     let album: Album
+    
+    init?(id: Int?, title: String?, preview: String?,
+          album: Album?) {
+        guard let id = id, let title = title, let preview = preview, let album = album else {return nil}
+
+        self.id = id
+        self.title = title
+        self.preview = preview
+        
+        self.album = album
+    }
 }
 
 struct Album: Decodable {
@@ -27,7 +32,15 @@ struct Album: Decodable {
     let id: Int
     let title: String
     let cover: String
-    
+
+    init?(id: Int?, title: String?, cover: String?) {
+        guard let id = id, let title = title, let cover = cover else {return nil}
+
+        self.id = id
+        self.title = title
+        self.cover = cover
+    }
+
 }
 
 // MARK: Data Sample

@@ -11,12 +11,15 @@ import AVFoundation
 final class AudioManager: NSObject {
     
     private var audioPlayer: AVPlayer?
+    private var coreDataStack: CoreDataStack?
     
     private var playing: Song?
     private var playingQueue: [Song] = []
 
     // MARK: init
-    // TODO: retrieve playList
+    func setup(coreDataStack: CoreDataStack) {
+        self.coreDataStack = coreDataStack
+    }
     
     func play(song: Song) {
         self.playing = song
@@ -27,9 +30,11 @@ final class AudioManager: NSObject {
         self.audioPlayer = AVPlayer(url: url)
 //        self.audioPlayer?.delegate = self
         self.audioPlayer?.play()
+        
+        self.savePlayedSong(song: song)
     }
     
-    func pause() {
+    private func pause() {
         self.audioPlayer?.pause()
         self.audioPlayer = nil
     }
@@ -48,6 +53,15 @@ final class AudioManager: NSObject {
             _ = songs.dropFirst()
             self.playingQueue.append(contentsOf: songs)
         }
+    }
+    
+    private func savePlayedSong(song: Song) {
+        guard let coreDataStack = self.coreDataStack else {return}
+        
+        PlayedSong.save(coreDataStack: coreDataStack,
+                        songID: song.id, songName: song.title, songURL: song.preview,
+                        albumID: song.album.id, albumCover: song.album.cover, albumName: song.album.title)
+
     }
 
 }
