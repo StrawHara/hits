@@ -38,12 +38,12 @@ We ask to review the app as soon as the user share content from within the app
 
 ## Screens
 
-<img src="./readMeAssets/screen_01.png" width="150">
-<img src="./readMeAssets/screen_02.png" width="150">
-<img src="./readMeAssets/screen_03.png" width="150">
-<img src="./readMeAssets/screen_04.png" width="150">
-<img src="./readMeAssets/screen_05.png" width="150">
-<img src="./readMeAssets/screen_06.png" width="150">
+<img src="./readMeAssets/screen_01.PNG" width="150">
+<img src="./readMeAssets/screen_02.PNG" width="150">
+<img src="./readMeAssets/screen_03.PNG" width="150">
+<img src="./readMeAssets/screen_04.PNG" width="150">
+<img src="./readMeAssets/screen_05.PNG" width="150">
+<img src="./readMeAssets/screen_06.PNG" width="150">
 
 ## Video
 
