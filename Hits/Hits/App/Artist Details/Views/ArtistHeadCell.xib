@@ -59,7 +59,7 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top songs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPO-5y-GrG">
-                        <rect key="frame" x="10" y="410" width="521" height="123"/>
+                        <rect key="frame" x="20" y="410" width="511" height="123"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                     <constraint firstItem="bPO-5y-GrG" firstAttribute="top" secondItem="tVy-aF-mkf" secondAttribute="bottom" constant="20" id="8f4-XL-0HN"/>
                     <constraint firstItem="yJ5-Rz-BhH" firstAttribute="top" secondItem="0WP-dR-dh3" secondAttribute="bottom" constant="20" id="Oz8-3e-Vev"/>
                     <constraint firstItem="0WP-dR-dh3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BfQ-0x-J4E" secondAttribute="leading" constant="20" id="PkY-y7-MB5"/>
-                    <constraint firstItem="bPO-5y-GrG" firstAttribute="leading" secondItem="BfQ-0x-J4E" secondAttribute="leading" constant="10" id="Z2c-VZ-H2n"/>
+                    <constraint firstItem="bPO-5y-GrG" firstAttribute="leading" secondItem="BfQ-0x-J4E" secondAttribute="leading" constant="20" id="Z2c-VZ-H2n"/>
                     <constraint firstItem="tVy-aF-mkf" firstAttribute="top" secondItem="yJ5-Rz-BhH" secondAttribute="bottom" constant="20" id="aVq-Tc-ji5"/>
                     <constraint firstAttribute="trailing" secondItem="yJ5-Rz-BhH" secondAttribute="trailing" constant="20" id="c4F-9F-zk8"/>
                     <constraint firstItem="yJ5-Rz-BhH" firstAttribute="leading" secondItem="BfQ-0x-J4E" secondAttribute="leading" constant="20" id="cbL-sP-1Mq"/>

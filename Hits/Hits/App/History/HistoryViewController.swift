@@ -12,6 +12,9 @@ final class HistoryViewController: UITableViewController, StoryboardBased, NSFet
 
     private var coreDataStack: CoreDataStack?
     private var audioManager: AudioManager?
+    private var tabBarDelegate: TabbarDelegate?
+    
+    private var emptyView: EmptyView? = nil
     
     var fetchedResultsController: NSFetchedResultsController<PlayedSong>?
         
@@ -27,11 +30,13 @@ final class HistoryViewController: UITableViewController, StoryboardBased, NSFet
         super.viewWillAppear(animated)
 
         self.fetchPlayedSongs()
+        self.showEmptyView()
     }
     
-    func setup(coreDataStack: CoreDataStack, audioManager: AudioManager) {
+    func setup(coreDataStack: CoreDataStack, audioManager: AudioManager, tabBarDelegate: TabbarDelegate) {
         self.coreDataStack = coreDataStack
         self.audioManager = audioManager
+        self.tabBarDelegate = tabBarDelegate
     }
     
     // MARK: Privates
@@ -68,6 +73,24 @@ final class HistoryViewController: UITableViewController, StoryboardBased, NSFet
                                 forCellReuseIdentifier: SongCell.identifier)
 
         self.tableView.reloadData()
+    }
+    
+    private func showEmptyView() {
+        if self.fetchedResultsController?.fetchedObjects?.count == 0 {
+            if self.emptyView == nil {
+                let emptyView = EmptyView.loadFromNib()
+                emptyView.translatesAutoresizingMaskIntoConstraints = false
+                self.view.addSubview(emptyView)
+                emptyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+                emptyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+                self.emptyView = emptyView
+                self.emptyView?.setup(delegate: self)
+            } else {
+                self.emptyView?.isHidden = false
+            }
+        } else {
+            self.emptyView?.isHidden = true
+        }
     }
     
     // MARK: Delegate
@@ -127,5 +150,12 @@ final class HistoryViewController: UITableViewController, StoryboardBased, NSFet
         default:
             break
         }
+        self.showEmptyView()
+    }
+}
+
+extension HistoryViewController: EmptyViewDelegate {
+    func actionButtonDidTouchedUp() {
+        self.tabBarDelegate?.showHits()
     }
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EmptyView" customModule="Hits" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="344"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubx-p6-W15">
+                    <rect key="frame" x="146.66666666666666" y="59" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="O1Q-IY-Ui9"/>
+                        <constraint firstAttribute="width" constant="100" id="xk7-GB-Bmg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="83"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops! Nothing here yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHp-wy-8z5">
+                    <rect key="frame" x="114.66666666666669" y="179" width="164" height="41"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WL6-dM-SCO">
+                    <rect key="frame" x="110.66666666666669" y="240" width="172" height="50"/>
+                    <color key="backgroundColor" name="hNnavy"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="sfc-6w-nQO"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Discover new Hits!">
+                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="actionButtonDidTouchedUp:" destination="iN0-l3-epB" eventType="touchUpInside" id="z78-is-l3b"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="WL6-dM-SCO" firstAttribute="top" secondItem="fHp-wy-8z5" secondAttribute="bottom" constant="20" id="7hl-fN-6Qc"/>
+                <constraint firstItem="Ubx-p6-W15" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cbs-65-L6w"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WL6-dM-SCO" secondAttribute="trailing" constant="10" id="HOS-MK-nb4"/>
+                <constraint firstItem="fHp-wy-8z5" firstAttribute="top" secondItem="Ubx-p6-W15" secondAttribute="bottom" constant="20" id="JRX-cA-FGC"/>
+                <constraint firstItem="WL6-dM-SCO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="KmK-R8-Fuc"/>
+                <constraint firstItem="fHp-wy-8z5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PUI-sW-tnh"/>
+                <constraint firstItem="fHp-wy-8z5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="RI4-IN-cfU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fHp-wy-8z5" secondAttribute="trailing" constant="10" id="T4e-60-DNt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WL6-dM-SCO" secondAttribute="bottom" constant="20" id="Tur-KU-x8T"/>
+                <constraint firstItem="Ubx-p6-W15" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="dpd-OW-TkN"/>
+                <constraint firstItem="WL6-dM-SCO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fbl-A3-Pbz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ubx-p6-W15" secondAttribute="trailing" id="wiq-u5-cTt"/>
+                <constraint firstItem="Ubx-p6-W15" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" id="z0h-LF-ynB"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="actionButton" destination="WL6-dM-SCO" id="Caq-jJ-b3N"/>
+                <outlet property="emptyLabel" destination="fHp-wy-8z5" id="MHf-yd-PLu"/>
+                <outlet property="imageLabel" destination="Ubx-p6-W15" id="a2p-iI-43G"/>
+            </connections>
+            <point key="canvasLocation" x="116.79389312977099" y="-104.92957746478874"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="hNnavy">
+            <color red="0.090000003576278687" green="0.41999998688697815" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

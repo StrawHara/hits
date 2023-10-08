@@ -24,11 +24,13 @@
 		55440BBB2AD15A5B004743FB /* HitsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BBA2AD15A5B004743FB /* HitsCell.swift */; };
 		55440BC02AD16C0B004743FB /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BBF2AD16C0B004743FB /* ArtistCell.swift */; };
 		55440BC22AD16C16004743FB /* ArtistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55440BC12AD16C16004743FB /* ArtistCell.xib */; };
-		55440BC42AD16D0C004743FB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BC32AD16D0C004743FB /* View.swift */; };
+		55440BC42AD16D0C004743FB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BC32AD16D0C004743FB /* UIView.swift */; };
 		55440BC72AD18153004743FB /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BC62AD18153004743FB /* HomeCoordinator.swift */; };
 		55440BCA2AD181D4004743FB /* CoordinatorBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BC92AD181D4004743FB /* CoordinatorBased.swift */; };
 		55440BCC2AD181DF004743FB /* CoordinatorFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BCB2AD181DF004743FB /* CoordinatorFlow.swift */; };
 		55440BCE2AD181EA004743FB /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BCD2AD181EA004743FB /* StateMachine.swift */; };
+		55683D742AD2A43F00CCC862 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55683D732AD2A43F00CCC862 /* EmptyView.swift */; };
+		55683D762AD2A44A00CCC862 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55683D752AD2A44A00CCC862 /* EmptyView.xib */; };
 		557067A42AD2268C00EABC6D /* PlayingQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */; };
 		55A837B52AD1432E006938AA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A837B42AD1432E006938AA /* PlayerViewController.swift */; };
 		55A837B72AD14338006938AA /* PlayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A837B62AD14338006938AA /* PlayerViewController.storyboard */; };
@@ -97,11 +99,13 @@
 		55440BBA2AD15A5B004743FB /* HitsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsCell.swift; sourceTree = "<group>"; };
 		55440BBF2AD16C0B004743FB /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		55440BC12AD16C16004743FB /* ArtistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistCell.xib; sourceTree = "<group>"; };
-		55440BC32AD16D0C004743FB /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		55440BC32AD16D0C004743FB /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		55440BC62AD18153004743FB /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		55440BC92AD181D4004743FB /* CoordinatorBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorBased.swift; sourceTree = "<group>"; };
 		55440BCB2AD181DF004743FB /* CoordinatorFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFlow.swift; sourceTree = "<group>"; };
 		55440BCD2AD181EA004743FB /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		55683D732AD2A43F00CCC862 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		55683D752AD2A44A00CCC862 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingQueueViewController.swift; sourceTree = "<group>"; };
 		55A837B42AD1432E006938AA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		55A837B62AD14338006938AA /* PlayerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerViewController.storyboard; sourceTree = "<group>"; };
@@ -215,12 +219,13 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
-		557067A22AD2267900EABC6D /* Playing Queue */ = {
+		55683D772AD2A44F00CCC862 /* EmptyView */ = {
 			isa = PBXGroup;
 			children = (
-				557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */,
+				55683D752AD2A44A00CCC862 /* EmptyView.xib */,
+				55683D732AD2A43F00CCC862 /* EmptyView.swift */,
 			);
-			path = "Playing Queue";
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		55A837B12AD142FB006938AA /* Home */ = {
@@ -255,9 +260,10 @@
 		55A837BC2AD14B33006938AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				557067A22AD2267900EABC6D /* Playing Queue */,
+				557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */,
 				55272AFB2AD1C3FE0064C091 /* Song */,
 				55A837BD2AD14B52006938AA /* HitsDesignableGradient.swift */,
+				55683D772AD2A44F00CCC862 /* EmptyView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -375,7 +381,7 @@
 		55FC64F62AD0B21B002D36D9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				55440BC32AD16D0C004743FB /* View.swift */,
+				55440BC32AD16D0C004743FB /* UIView.swift */,
 				552072D02AD1A25E00B5B50A /* Collection.swift */,
 				55FCB4C42AD209AB00E4BF17 /* Int.swift */,
 			);
@@ -511,6 +517,7 @@
 				55440BC22AD16C16004743FB /* ArtistCell.xib in Resources */,
 				552072D62AD1A46E00B5B50A /* ArtistDetailsViewController.storyboard in Resources */,
 				55FC64CA2AD0B0DD002D36D9 /* LaunchScreen.storyboard in Resources */,
+				55683D762AD2A44A00CCC862 /* EmptyView.xib in Resources */,
 				55FC64C72AD0B0DD002D36D9 /* Assets.xcassets in Resources */,
 				55272AFF2AD1C4280064C091 /* SongCell.xib in Resources */,
 				55440BB92AD15A52004743FB /* HitsCell.xib in Resources */,
@@ -558,7 +565,7 @@
 				55440BCC2AD181DF004743FB /* CoordinatorFlow.swift in Sources */,
 				55FC65002AD0B21B002D36D9 /* HitsViewModel.swift in Sources */,
 				55272AFA2AD1B9D00064C091 /* ArtistDetailsCoordinator.swift in Sources */,
-				55440BC42AD16D0C004743FB /* View.swift in Sources */,
+				55440BC42AD16D0C004743FB /* UIView.swift in Sources */,
 				55272AFD2AD1C4180064C091 /* SongCell.swift in Sources */,
 				55440BCE2AD181EA004743FB /* StateMachine.swift in Sources */,
 				552072D42AD1A45B00B5B50A /* ArtistDetailsViewController.swift in Sources */,
@@ -580,6 +587,7 @@
 				55A837BB2AD14350006938AA /* HistoryViewController.swift in Sources */,
 				55FC65032AD0B21B002D36D9 /* APIError.swift in Sources */,
 				552072CB2AD195AC00B5B50A /* ImageCache.swift in Sources */,
+				55683D742AD2A43F00CCC862 /* EmptyView.swift in Sources */,
 				55A837B52AD1432E006938AA /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,10 @@ enum TabbarItem: Int {
     case history
 }
 
+protocol TabbarDelegate: AnyObject {
+    func showHits()
+}
+
 final class AppCoordinator: NSObject {
     
     private var window: UIWindow?
@@ -41,14 +45,12 @@ final class AppCoordinator: NSObject {
         self.homeCoordinator = HomeCoordinator(deezerService: self.deezerService, audioManager: self.audioManager)
 
         self.playerVC = PlayerViewController.instantiate()
-        self.playerVC.setup(audioManager: self.audioManager)
         self.playerNav = UINavigationController(rootViewController: self.playerVC)
         self.playerNav.tabBarItem = UITabBarItem(title: "Player", // TODO: Trad
                                                  image: UIImage(systemName: "play.circle.fill"), // TODO: pause.circle.fill
                                                  tag: TabbarItem.player.rawValue)
 
         self.historyVC = HistoryViewController()
-        self.historyVC.setup(coreDataStack: self.coreDataStack, audioManager: self.audioManager)
         self.historyNav = UINavigationController(rootViewController: self.historyVC)
         self.historyNav.tabBarItem = UITabBarItem(title: "History", // TODO: Trad
                                                image: UIImage(systemName: "list.triangle"),
@@ -61,10 +63,21 @@ final class AppCoordinator: NSObject {
         self.tabbarController.tabBar.tintColor = .hDarkBlue
         self.tabbarController.tabBar.clipsToBounds = false
 
+        super.init()
+        
+        self.playerVC.setup(audioManager: self.audioManager, tabBarDelegate: self)
+        self.historyVC.setup(coreDataStack: self.coreDataStack, audioManager: self.audioManager, tabBarDelegate: self)
+
         self.window?.rootViewController = self.tabbarController
     }
     
     // MARK: Coordinator implementation
     func start() {}
 
+}
+
+extension AppCoordinator: TabbarDelegate {
+    func showHits() {
+        self.tabbarController.selectedIndex = TabbarItem.hits.rawValue
+    }
 }

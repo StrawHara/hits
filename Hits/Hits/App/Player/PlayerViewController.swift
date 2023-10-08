@@ -12,6 +12,7 @@ import StoreKit
 final class PlayerViewController: UIViewController, StoryboardBased {
     
     private var audioManager: AudioManager?
+    private var tabBarDelegate: TabbarDelegate?
     
     @IBOutlet weak var albumCoverImage: UIImageView!
     
@@ -23,11 +24,11 @@ final class PlayerViewController: UIViewController, StoryboardBased {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     
-    @IBOutlet weak var actionStackView: UIStackView!
     @IBOutlet weak var sharebutton: UIButton!
-    @IBOutlet weak var likebutton: UIButton!
     @IBOutlet weak var queueButton: UIButton!
     
+    private var emptyView: EmptyView? = nil
+
     private var cancellable: AnyCancellable?
     
     override func viewDidLoad() {
@@ -40,10 +41,13 @@ final class PlayerViewController: UIViewController, StoryboardBased {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.refresh()
+        self.showEmptyView()
     }
     
-    func setup(audioManager: AudioManager) {
+    func setup(audioManager: AudioManager, tabBarDelegate: TabbarDelegate) {
         self.audioManager = audioManager
+        self.tabBarDelegate = tabBarDelegate
+        self.showEmptyView()
     }
     
     // MARK: Privates
@@ -58,10 +62,27 @@ final class PlayerViewController: UIViewController, StoryboardBased {
         self.forwardButton.setTitle("", for: .selected)
         self.sharebutton.setTitle("", for: .normal)
         self.sharebutton.setTitle("", for: .selected)
-        self.likebutton.setTitle("", for: .normal)
-        self.likebutton.setTitle("", for: .selected)
         self.queueButton.setTitle("", for: .normal)
         self.queueButton.setTitle("", for: .selected)
+    }
+    
+    private func showEmptyView() {
+        let viewIsEmpty = self.audioManager?.playing == nil
+
+        if self.emptyView == nil {
+            let emptyView = EmptyView.loadFromNib()
+            emptyView.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(emptyView)
+            emptyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            emptyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+            self.emptyView = emptyView
+            self.emptyView?.setup(delegate: self)
+        }
+        
+        self.emptyView?.isHidden = viewIsEmpty == false
+        self.controlsStackView.isHidden = viewIsEmpty == true
+        self.sharebutton.isHidden = viewIsEmpty == true
+        self.queueButton.isHidden = viewIsEmpty == true
     }
     
     private func refresh() {
@@ -130,13 +151,18 @@ final class PlayerViewController: UIViewController, StoryboardBased {
         }
     }
     
-    @IBAction func favoriteDidTouchedUp(_ sender: Any) {
-    }
+//    @IBAction func favoriteDidTouchedUp(_ sender: Any) {}
     
     @IBAction func queueDidTouchedUp(_ sender: Any) {
         let queueVC = PlayingQueueViewController()
-        queueVC.setup(songs: self.audioManager?.playingQueue ?? [])
+        queueVC.setup(songs: self.audioManager?.playingQueue ?? [], tabBarDelegate: self.tabBarDelegate)
         self.present(queueVC, animated: true, completion: nil)
     }
 }
 
+extension PlayerViewController: EmptyViewDelegate {
+    func actionButtonDidTouchedUp() {
+        self.tabBarDelegate?.showHits()
+        self.dismiss(animated: true)
+    }
+}

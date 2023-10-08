@@ -13,7 +13,10 @@ class PlayingQueueViewController: UIViewController {
     private var safeArea: UILayoutGuide!
     
     private var songs: [Song] = []
-    
+    private var tabBarDelegate: TabbarDelegate?
+
+    private var emptyView: EmptyView? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,11 +24,13 @@ class PlayingQueueViewController: UIViewController {
         self.setupTableView()
     }
     
-    func setup(songs: [Song]) {
+    func setup(songs: [Song], tabBarDelegate: TabbarDelegate?) {
         self.songs = songs
+        self.tabBarDelegate = tabBarDelegate
+        self.showEmptyView()
     }
 
-    func setupTableView() {
+    private func setupTableView() {
         self.view.addSubview(self.tableView)
         
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +47,23 @@ class PlayingQueueViewController: UIViewController {
         self.tableView.register(UINib(nibName: SongCell.identifier, bundle: nil),
                                 forCellReuseIdentifier: SongCell.identifier)
     }
+    
+    private func showEmptyView() {
+        let viewIsEmpty = self.songs.isEmpty
+
+        if self.emptyView == nil {
+            let emptyView = EmptyView.loadFromNib()
+            emptyView.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(emptyView)
+            emptyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            emptyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+            self.emptyView = emptyView
+            self.emptyView?.setup(delegate: self)
+        }
+        
+        self.emptyView?.isHidden = viewIsEmpty == false
+    }
+    
 }
 
 extension PlayingQueueViewController: UITableViewDataSource {
@@ -68,4 +90,10 @@ extension PlayingQueueViewController: UITableViewDataSource {
         return cell
     }
     
+}
+
+extension PlayingQueueViewController: EmptyViewDelegate {
+    func actionButtonDidTouchedUp() {
+        self.tabBarDelegate?.showHits()
+    }
 }

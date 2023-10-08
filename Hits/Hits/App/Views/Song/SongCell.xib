@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vg0-To-ZZk">
-                        <rect key="frame" x="10" y="17" width="50" height="50"/>
+                        <rect key="frame" x="20" y="17" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="0CK-mO-CRW"/>
                             <constraint firstAttribute="width" constant="50" id="YlK-7y-iSy"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-sZ-bWt">
-                        <rect key="frame" x="70" y="19.666666666666671" width="467" height="45"/>
+                        <rect key="frame" x="80" y="19.666666666666671" width="447" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-sM-hal">
-                                <rect key="frame" x="0.0" y="0.0" width="467" height="22"/>
+                                <rect key="frame" x="0.0" y="0.0" width="447" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="yEO-LK-7P4"/>
                                 </constraints>
@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="w8B-Ta-ZTl">
-                                <rect key="frame" x="0.0" y="27" width="467" height="18"/>
+                                <rect key="frame" x="0.0" y="27" width="447" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Ww4-SX-Q18"/>
                                 </constraints>
@@ -60,12 +60,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="fUi-sZ-bWt" firstAttribute="leading" secondItem="vg0-To-ZZk" secondAttribute="trailing" constant="10" id="235-wr-A7P"/>
-                    <constraint firstItem="vg0-To-ZZk" firstAttribute="leading" secondItem="MKR-IW-TVE" secondAttribute="leading" constant="10" id="Lmw-BA-Wef"/>
+                    <constraint firstItem="vg0-To-ZZk" firstAttribute="leading" secondItem="MKR-IW-TVE" secondAttribute="leading" constant="20" id="Lmw-BA-Wef"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vg0-To-ZZk" secondAttribute="bottom" constant="10" id="SrK-2N-70F"/>
                     <constraint firstItem="fUi-sZ-bWt" firstAttribute="centerY" secondItem="vg0-To-ZZk" secondAttribute="centerY" id="YK1-6H-DnN"/>
                     <constraint firstItem="vg0-To-ZZk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MKR-IW-TVE" secondAttribute="top" constant="10" id="acR-hL-ixx"/>
                     <constraint firstItem="fUi-sZ-bWt" firstAttribute="centerY" secondItem="MKR-IW-TVE" secondAttribute="centerY" id="iQc-sU-oyB"/>
-                    <constraint firstAttribute="trailing" secondItem="fUi-sZ-bWt" secondAttribute="trailing" constant="10" id="nef-Wp-its"/>
+                    <constraint firstAttribute="trailing" secondItem="fUi-sZ-bWt" secondAttribute="trailing" constant="20" id="nef-Wp-its"/>
                     <constraint firstItem="vg0-To-ZZk" firstAttribute="centerY" secondItem="MKR-IW-TVE" secondAttribute="centerY" id="trv-T9-LdK"/>
                 </constraints>
             </tableViewCellContentView>
