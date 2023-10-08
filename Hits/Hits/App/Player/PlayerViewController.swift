@@ -150,9 +150,7 @@ final class PlayerViewController: UIViewController, StoryboardBased {
             // Fallback on earlier versions
         }
     }
-    
-//    @IBAction func favoriteDidTouchedUp(_ sender: Any) {}
-    
+        
     @IBAction func queueDidTouchedUp(_ sender: Any) {
         let queueVC = PlayingQueueViewController()
         queueVC.setup(songs: self.audioManager?.playingQueue ?? [], tabBarDelegate: self.tabBarDelegate)

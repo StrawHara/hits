@@ -62,17 +62,40 @@ final class AppCoordinator: NSObject {
         self.tabbarController.tabBar.contentMode = .scaleAspectFill
         self.tabbarController.tabBar.tintColor = .hDarkBlue
         self.tabbarController.tabBar.clipsToBounds = false
-
+        
         super.init()
         
-        self.playerVC.setup(audioManager: self.audioManager, tabBarDelegate: self)
-        self.historyVC.setup(coreDataStack: self.coreDataStack, audioManager: self.audioManager, tabBarDelegate: self)
-
-        self.window?.rootViewController = self.tabbarController
+        self.start()
     }
     
     // MARK: Coordinator implementation
-    func start() {}
+    func start() {
+        self.window?.rootViewController = UINavigationController()
+
+        if UserDefaults.standard.bool(forKey: "onboardingCompleted") == true {
+            self.showApp()
+        } else {
+            self.showOnboarding()
+        }
+    }
+    
+    func showOnboarding() {
+        var flow = OnboardingCoordinator()
+        flow.setup(didStart: {
+        }, completionHandler: { (_ error: Error?) in
+            UserDefaults.standard.setValue(true, forKey: "onboardingCompleted")
+            self.showApp()
+        }, mainViewController: self.window?.rootViewController)
+        flow.start()
+    }
+    
+    func showApp() {
+        self.homeCoordinator.start()
+        self.playerVC.setup(audioManager: self.audioManager, tabBarDelegate: self)
+        self.historyVC.setup(coreDataStack: self.coreDataStack, audioManager: self.audioManager, tabBarDelegate: self)
+        self.window?.rootViewController = self.tabbarController
+
+    }
 
 }
 

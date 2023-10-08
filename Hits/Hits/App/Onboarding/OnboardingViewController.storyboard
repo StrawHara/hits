@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="Hits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jxv-NI-3SC">
+                                <rect key="frame" x="20" y="79" width="353" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ouK-YL-hHg">
+                                <rect key="frame" x="71.666666666666686" y="301" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="7tL-c8-iC7"/>
+                                    <constraint firstAttribute="height" constant="250" id="ZcF-OS-Wbj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8W-lP-QPH">
+                                <rect key="frame" x="20" y="571" width="353" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="L4L-4E-lVO">
+                                <rect key="frame" x="20" y="758" width="353" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Z5-PL-RTT">
+                                        <rect key="frame" x="0.0" y="3" width="166.66666666666666" height="34.333333333333336"/>
+                                        <color key="backgroundColor" name="hTeal"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="previousButtonDidTouchedUp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mkC-5d-KcH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih3-uY-598">
+                                        <rect key="frame" x="186.66666666666663" y="3" width="166.33333333333337" height="34.333333333333336"/>
+                                        <color key="backgroundColor" name="hNnavy"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Continue">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="continueButtonDidTouchedUp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cjL-mi-0Pe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fsf-gW-XNz"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L4L-4E-lVO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="67L-d7-wF4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="I8W-lP-QPH" secondAttribute="trailing" constant="20" id="BYC-9M-OC4"/>
+                            <constraint firstItem="ouK-YL-hHg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jxv-NI-3SC" secondAttribute="bottom" constant="20" id="Bt0-pI-bQg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jxv-NI-3SC" secondAttribute="trailing" constant="20" id="EbP-Cv-eQ3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ouK-YL-hHg" secondAttribute="trailing" constant="20" id="GKZ-O5-jgg"/>
+                            <constraint firstItem="ouK-YL-hHg" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Rap-w2-auL"/>
+                            <constraint firstItem="ouK-YL-hHg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="VxS-0d-HL7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="L4L-4E-lVO" secondAttribute="bottom" constant="20" id="YjD-KP-b2k"/>
+                            <constraint firstItem="L4L-4E-lVO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I8W-lP-QPH" secondAttribute="bottom" constant="20" id="bA4-Nw-nbq"/>
+                            <constraint firstItem="I8W-lP-QPH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="eUH-ca-NfK"/>
+                            <constraint firstItem="I8W-lP-QPH" firstAttribute="top" secondItem="ouK-YL-hHg" secondAttribute="bottom" constant="20" id="nAO-r0-S2f"/>
+                            <constraint firstItem="jxv-NI-3SC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="p9l-wT-wVa"/>
+                            <constraint firstItem="jxv-NI-3SC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ten-kp-XYi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L4L-4E-lVO" secondAttribute="trailing" constant="20" id="vNR-ZL-Zvb"/>
+                            <constraint firstItem="ouK-YL-hHg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="zwE-DW-kI2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="Ih3-uY-598" id="q8H-SN-3H7"/>
+                        <outlet property="descriptionLabel" destination="I8W-lP-QPH" id="reg-hA-bNK"/>
+                        <outlet property="imageView" destination="ouK-YL-hHg" id="fEd-HU-aCW"/>
+                        <outlet property="previousButton" destination="7Z5-PL-RTT" id="Ua5-3C-06b"/>
+                        <outlet property="titleLabel" destination="jxv-NI-3SC" id="fsh-Gp-f1Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="hNnavy">
+            <color red="0.090000003576278687" green="0.41999998688697815" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="hTeal">
+            <color red="0.3919999897480011" green="0.80000001192092896" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

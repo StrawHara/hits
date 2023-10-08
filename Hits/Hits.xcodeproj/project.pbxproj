@@ -31,6 +31,9 @@
 		55440BCE2AD181EA004743FB /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BCD2AD181EA004743FB /* StateMachine.swift */; };
 		55683D742AD2A43F00CCC862 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55683D732AD2A43F00CCC862 /* EmptyView.swift */; };
 		55683D762AD2A44A00CCC862 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55683D752AD2A44A00CCC862 /* EmptyView.xib */; };
+		55683D7A2AD2B4A700CCC862 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55683D792AD2B4A700CCC862 /* OnboardingCoordinator.swift */; };
+		55683D7C2AD2B4B500CCC862 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55683D7B2AD2B4B500CCC862 /* OnboardingViewController.swift */; };
+		55683D7E2AD2B4C400CCC862 /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55683D7D2AD2B4C400CCC862 /* OnboardingViewController.storyboard */; };
 		557067A42AD2268C00EABC6D /* PlayingQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */; };
 		55A837B52AD1432E006938AA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A837B42AD1432E006938AA /* PlayerViewController.swift */; };
 		55A837B72AD14338006938AA /* PlayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A837B62AD14338006938AA /* PlayerViewController.storyboard */; };
@@ -106,6 +109,9 @@
 		55440BCD2AD181EA004743FB /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		55683D732AD2A43F00CCC862 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		55683D752AD2A44A00CCC862 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		55683D792AD2B4A700CCC862 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		55683D7B2AD2B4B500CCC862 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		55683D7D2AD2B4C400CCC862 /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
 		557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingQueueViewController.swift; sourceTree = "<group>"; };
 		55A837B42AD1432E006938AA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		55A837B62AD14338006938AA /* PlayerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerViewController.storyboard; sourceTree = "<group>"; };
@@ -228,6 +234,16 @@
 			path = EmptyView;
 			sourceTree = "<group>";
 		};
+		55683D782AD2B48D00CCC862 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				55683D792AD2B4A700CCC862 /* OnboardingCoordinator.swift */,
+				55683D7B2AD2B4B500CCC862 /* OnboardingViewController.swift */,
+				55683D7D2AD2B4C400CCC862 /* OnboardingViewController.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		55A837B12AD142FB006938AA /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +352,7 @@
 		55FC64EE2AD0B10E002D36D9 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				55683D782AD2B48D00CCC862 /* Onboarding */,
 				55A837B12AD142FB006938AA /* Home */,
 				55A837B22AD14302006938AA /* Player */,
 				55A837B32AD14309006938AA /* History */,
@@ -514,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55272B022AD1E2680064C091 /* ArtistHeadCell.xib in Resources */,
+				55683D7E2AD2B4C400CCC862 /* OnboardingViewController.storyboard in Resources */,
 				55440BC22AD16C16004743FB /* ArtistCell.xib in Resources */,
 				552072D62AD1A46E00B5B50A /* ArtistDetailsViewController.storyboard in Resources */,
 				55FC64CA2AD0B0DD002D36D9 /* LaunchScreen.storyboard in Resources */,
@@ -571,12 +589,14 @@
 				552072D42AD1A45B00B5B50A /* ArtistDetailsViewController.swift in Sources */,
 				55FCB4C32AD2086F00E4BF17 /* PlayedSong.swift in Sources */,
 				55A837BE2AD14B52006938AA /* HitsDesignableGradient.swift in Sources */,
+				55683D7A2AD2B4A700CCC862 /* OnboardingCoordinator.swift in Sources */,
 				55FC65052AD0B21B002D36D9 /* DeezerEndpoint.swift in Sources */,
 				55FC65082AD0B21B002D36D9 /* APIEndpoint.swift in Sources */,
 				55272AF82AD1B5E00064C091 /* AudioManager.swift in Sources */,
 				55FC650E2AD0BABE002D36D9 /* StoryboardBased.swift in Sources */,
 				55FC64BB2AD0B0DC002D36D9 /* AppDelegate.swift in Sources */,
 				55FC64BD2AD0B0DC002D36D9 /* SceneDelegate.swift in Sources */,
+				55683D7C2AD2B4B500CCC862 /* OnboardingViewController.swift in Sources */,
 				55FCB4C12AD2074700E4BF17 /* CoreDataStack.swift in Sources */,
 				552072D12AD1A25E00B5B50A /* Collection.swift in Sources */,
 				55FC64FF2AD0B21B002D36D9 /* DebugPrint.swift in Sources */,

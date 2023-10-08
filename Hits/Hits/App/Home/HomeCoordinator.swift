@@ -32,8 +32,6 @@ final class HomeCoordinator: NSObject {
                                                tag: TabbarItem.hits.rawValue)
         
         super.init()
-        
-        self.start()
     }
     
     // MARK: Coordinator implementation
