@@ -72,11 +72,11 @@ final class AppCoordinator: NSObject {
     func start() {
         self.window?.rootViewController = UINavigationController()
 
-        if UserDefaults.standard.bool(forKey: "onboardingCompleted") == true {
-            self.showApp()
-        } else {
+//        if UserDefaults.standard.bool(forKey: "onboardingCompleted") == true {
+//            self.showApp()
+//        } else {
             self.showOnboarding()
-        }
+//        }
     }
     
     func showOnboarding() {

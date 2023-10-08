@@ -21,7 +21,7 @@ final class HistoryViewController: UITableViewController, StoryboardBased, NSFet
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "History"
+        self.title = "My history"
         
         self.setupTableView()
     }

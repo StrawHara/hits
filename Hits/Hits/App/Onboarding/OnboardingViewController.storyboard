@@ -32,17 +32,20 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8W-lP-QPH">
-                                <rect key="frame" x="20" y="571" width="353" height="20.333333333333371"/>
+                                <rect key="frame" x="20" y="591" width="353" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="L4L-4E-lVO">
-                                <rect key="frame" x="20" y="758" width="353" height="40"/>
+                                <rect key="frame" x="20" y="748" width="353" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Z5-PL-RTT">
-                                        <rect key="frame" x="0.0" y="3" width="166.66666666666666" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="50"/>
                                         <color key="backgroundColor" name="hTeal"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TtH-Uk-71T"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,8 +55,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih3-uY-598">
-                                        <rect key="frame" x="186.66666666666663" y="3" width="166.33333333333337" height="34.333333333333336"/>
+                                        <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="50"/>
                                         <color key="backgroundColor" name="hNnavy"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="HY6-1n-WSQ"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Continue">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,7 +70,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="fsf-gW-XNz"/>
+                                    <constraint firstAttribute="height" constant="50" id="fsf-gW-XNz"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -81,7 +87,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="L4L-4E-lVO" secondAttribute="bottom" constant="20" id="YjD-KP-b2k"/>
                             <constraint firstItem="L4L-4E-lVO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I8W-lP-QPH" secondAttribute="bottom" constant="20" id="bA4-Nw-nbq"/>
                             <constraint firstItem="I8W-lP-QPH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="eUH-ca-NfK"/>
-                            <constraint firstItem="I8W-lP-QPH" firstAttribute="top" secondItem="ouK-YL-hHg" secondAttribute="bottom" constant="20" id="nAO-r0-S2f"/>
+                            <constraint firstItem="I8W-lP-QPH" firstAttribute="top" secondItem="ouK-YL-hHg" secondAttribute="bottom" constant="40" id="nAO-r0-S2f"/>
                             <constraint firstItem="jxv-NI-3SC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="p9l-wT-wVa"/>
                             <constraint firstItem="jxv-NI-3SC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ten-kp-XYi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L4L-4E-lVO" secondAttribute="trailing" constant="20" id="vNR-ZL-Zvb"/>

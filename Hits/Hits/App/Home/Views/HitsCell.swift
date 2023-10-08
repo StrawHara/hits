@@ -50,7 +50,7 @@ final class HitsCell: UITableViewCell {
             return
         }
         
-        self.title.text = "Hits #\(viewModel.hitID)"  // TODO: name?
+        self.title.text = viewModel.title
         self.seeMore.titleLabel?.text = "See all" // TODO: trad
 
         self.collectionView.reloadData()

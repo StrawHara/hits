@@ -94,9 +94,9 @@ final class PlayerViewController: UIViewController, StoryboardBased {
         self.subtitleLabel.text = song.album.title
         self.cancellable = self.loadImage(for: song.album.cover).sink { [unowned self] image in self.showImage(image: image) }
         
+        self.backwardButton.setImage(UIImage(systemName: "backward"), for: .normal) // TODO: backward with history
         self.playButton.setImage(audioManager.isPlaying ? UIImage(systemName: "pause.fill") : UIImage(systemName: "play.fill"), for: .normal)
         self.forwardButton.setImage(audioManager.playingQueue.isEmpty ? UIImage(systemName: "forward") : UIImage(systemName: "forward.fill"), for: .normal)
-        // TODO: backward with history
     }
     
     private func showImage(image: UIImage?) {

@@ -73,27 +73,27 @@ final class OnboardingCoordinator: NSObject, FlowStateMachine, CoordinatorFlow {
         case .introduction:
             onboardingVM  = OnboardingViewController.ViewModel(title: "Welcome to Hits!",
                                                                image: UIImage(named: "logo"),
-                                                               description: "The app who find the Newer & Better Hits, just for you!",
+                                                               description: "Find the top and latest hits!\nOr let us make a selection, just for you 🫶🏼",
                                                                previousIsHidden: true)
         case .categories:
-            onboardingVM = OnboardingViewController.ViewModel(title: "The best Artists",
+            onboardingVM = OnboardingViewController.ViewModel(title: "Top artists",
                                                               image: UIImage(named: "hits"),
-                                                              description: "All sorted by categories",
+                                                              description: "Browse through the latest hottest artists. Sort them by music type, mood, country and more ❤️",
                                                               previousIsHidden: false)
         case .artist:
-            onboardingVM = OnboardingViewController.ViewModel(title: "The best Songs",
+            onboardingVM = OnboardingViewController.ViewModel(title: "Top hits",
                                                               image: UIImage(named: "artist"),
-                                                              description: "Artist's Top songs",
+                                                              description: "It's music time! Catch up and listen to the best and most popular hits out there 🎶",
                                                               previousIsHidden: false)
         case .history:
-            onboardingVM = OnboardingViewController.ViewModel(title: "History",
+            onboardingVM = OnboardingViewController.ViewModel(title: "My history",
                                                               image: UIImage(named: "history"),
-                                                              description: "Never forget a Hit!",
+                                                              description: "Keep track of the hits you've played, so you can play them again and again 🔁",
                                                               previousIsHidden: false)
         case .notification:
-            onboardingVM = OnboardingViewController.ViewModel(title: "Don't want to miss a Hit?",
+            onboardingVM = OnboardingViewController.ViewModel(title: "Don't miss a Hit!",
                                                               image: UIImage(named: "push"),
-                                                              description: "Promise, we would bother you only for urgency Hit case ❤️",
+                                                              description: "FOMO? Receive notifications and be the first one to know when a new hit gets released 🚨",
                                                               previousIsHidden: false)
         }
         
@@ -133,7 +133,6 @@ extension OnboardingCoordinator: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         guard navigationController === mainViewController else { return }
-        guard let currentStep = currentStep else { return }
         
         viewController.navigationItem.title = ""
         viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

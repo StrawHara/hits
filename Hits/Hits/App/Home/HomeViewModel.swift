@@ -27,12 +27,12 @@ final class HomeViewModel: ObservableObject {
         self.delegate = delegate
         
         // TODO: Find real hits ids
-        self.hits.append(HitsViewModel(service: service, hitID: 0, delegate: self))
-        self.hits.append(HitsViewModel(service: service, hitID: 2, delegate: self))
-        self.hits.append(HitsViewModel(service: service, hitID: 12, delegate: self))
-        self.hits.append(HitsViewModel(service: service, hitID: 16, delegate: self))
-        self.hits.append(HitsViewModel(service: service, hitID: 52, delegate: self))
-        self.hits.append(HitsViewModel(service: service, hitID: 54, delegate: self))
+        self.hits.append(HitsViewModel(service: service, hitID: 0, title: "Top French hits", delegate: self))
+        self.hits.append(HitsViewModel(service: service, hitID: 2, title: "Top hip-hop artists", delegate: self))
+        self.hits.append(HitsViewModel(service: service, hitID: 12, title: "Top happy mood hits", delegate: self))
+        self.hits.append(HitsViewModel(service: service, hitID: 16, title: "Best morning hits", delegate: self))
+        self.hits.append(HitsViewModel(service: service, hitID: 52, title: "Top dancing hits", delegate: self))
+        self.hits.append(HitsViewModel(service: service, hitID: 54, title: "Best love songs", delegate: self))
         
         self.fetchHits()
     }

@@ -42,7 +42,10 @@
                                 <rect key="frame" x="40" y="688" width="313" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkH-tX-pHf">
-                                        <rect key="frame" x="0.0" y="23.000000000000004" width="104.33333333333333" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="25" width="104.33333333333333" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="mqt-Pz-OdZ"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="backward" catalog="system" symbolScale="medium"/>
@@ -67,7 +70,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7W-xn-DeH">
-                                        <rect key="frame" x="208.66666666666666" y="23.000000000000004" width="104.33333333333334" height="34.333333333333343"/>
+                                        <rect key="frame" x="208.66666666666666" y="25" width="104.33333333333334" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="BW9-MM-aZk"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="forward.fill" catalog="system" symbolScale="medium"/>
