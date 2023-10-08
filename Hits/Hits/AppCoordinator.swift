@@ -41,6 +41,7 @@ final class AppCoordinator: NSObject {
         self.homeCoordinator = HomeCoordinator(deezerService: self.deezerService, audioManager: self.audioManager)
 
         self.playerVC = PlayerViewController.instantiate()
+        self.playerVC.setup(audioManager: self.audioManager)
         self.playerNav = UINavigationController(rootViewController: self.playerVC)
         self.playerNav.tabBarItem = UITabBarItem(title: "Player", // TODO: Trad
                                                  image: UIImage(systemName: "play.circle.fill"), // TODO: pause.circle.fill
@@ -57,6 +58,7 @@ final class AppCoordinator: NSObject {
         self.tabbarController = UITabBarController()
         self.tabbarController.viewControllers = [self.homeCoordinator.homeNav, self.playerNav, self.historyNav]
         self.tabbarController.tabBar.contentMode = .scaleAspectFill
+        self.tabbarController.tabBar.tintColor = .hDarkBlue
         self.tabbarController.tabBar.clipsToBounds = false
 
         self.window?.rootViewController = self.tabbarController

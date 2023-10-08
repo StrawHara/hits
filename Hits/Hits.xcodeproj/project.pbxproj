@@ -29,9 +29,9 @@
 		55440BCA2AD181D4004743FB /* CoordinatorBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BC92AD181D4004743FB /* CoordinatorBased.swift */; };
 		55440BCC2AD181DF004743FB /* CoordinatorFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BCB2AD181DF004743FB /* CoordinatorFlow.swift */; };
 		55440BCE2AD181EA004743FB /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55440BCD2AD181EA004743FB /* StateMachine.swift */; };
+		557067A42AD2268C00EABC6D /* PlayingQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */; };
 		55A837B52AD1432E006938AA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A837B42AD1432E006938AA /* PlayerViewController.swift */; };
 		55A837B72AD14338006938AA /* PlayerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A837B62AD14338006938AA /* PlayerViewController.storyboard */; };
-		55A837B92AD1434A006938AA /* HistoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A837B82AD1434A006938AA /* HistoryViewController.storyboard */; };
 		55A837BB2AD14350006938AA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A837BA2AD14350006938AA /* HistoryViewController.swift */; };
 		55A837BE2AD14B52006938AA /* HitsDesignableGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A837BD2AD14B52006938AA /* HitsDesignableGradient.swift */; };
 		55A837C02AD14EC9006938AA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A837BF2AD14EC9006938AA /* HomeViewModel.swift */; };
@@ -102,9 +102,9 @@
 		55440BC92AD181D4004743FB /* CoordinatorBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorBased.swift; sourceTree = "<group>"; };
 		55440BCB2AD181DF004743FB /* CoordinatorFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFlow.swift; sourceTree = "<group>"; };
 		55440BCD2AD181EA004743FB /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingQueueViewController.swift; sourceTree = "<group>"; };
 		55A837B42AD1432E006938AA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		55A837B62AD14338006938AA /* PlayerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerViewController.storyboard; sourceTree = "<group>"; };
-		55A837B82AD1434A006938AA /* HistoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryViewController.storyboard; sourceTree = "<group>"; };
 		55A837BA2AD14350006938AA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		55A837BD2AD14B52006938AA /* HitsDesignableGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsDesignableGradient.swift; sourceTree = "<group>"; };
 		55A837BF2AD14EC9006938AA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -215,6 +215,14 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		557067A22AD2267900EABC6D /* Playing Queue */ = {
+			isa = PBXGroup;
+			children = (
+				557067A32AD2268C00EABC6D /* PlayingQueueViewController.swift */,
+			);
+			path = "Playing Queue";
+			sourceTree = "<group>";
+		};
 		55A837B12AD142FB006938AA /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +247,6 @@
 		55A837B32AD14309006938AA /* History */ = {
 			isa = PBXGroup;
 			children = (
-				55A837B82AD1434A006938AA /* HistoryViewController.storyboard */,
 				55A837BA2AD14350006938AA /* HistoryViewController.swift */,
 			);
 			path = History;
@@ -248,6 +255,7 @@
 		55A837BC2AD14B33006938AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				557067A22AD2267900EABC6D /* Playing Queue */,
 				55272AFB2AD1C3FE0064C091 /* Song */,
 				55A837BD2AD14B52006938AA /* HitsDesignableGradient.swift */,
 			);
@@ -503,7 +511,6 @@
 				55440BC22AD16C16004743FB /* ArtistCell.xib in Resources */,
 				552072D62AD1A46E00B5B50A /* ArtistDetailsViewController.storyboard in Resources */,
 				55FC64CA2AD0B0DD002D36D9 /* LaunchScreen.storyboard in Resources */,
-				55A837B92AD1434A006938AA /* HistoryViewController.storyboard in Resources */,
 				55FC64C72AD0B0DD002D36D9 /* Assets.xcassets in Resources */,
 				55272AFF2AD1C4280064C091 /* SongCell.xib in Resources */,
 				55440BB92AD15A52004743FB /* HitsCell.xib in Resources */,
@@ -534,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55272AF42AD1B0180064C091 /* ArtistDetailsViewModel.swift in Sources */,
+				557067A42AD2268C00EABC6D /* PlayingQueueViewController.swift in Sources */,
 				55440BC02AD16C0B004743FB /* ArtistCell.swift in Sources */,
 				55440BCA2AD181D4004743FB /* CoordinatorBased.swift in Sources */,
 				55FC64BF2AD0B0DC002D36D9 /* HomeViewController.swift in Sources */,

@@ -13,8 +13,10 @@ final class AudioManager: NSObject {
     private var audioPlayer: AVPlayer?
     private var coreDataStack: CoreDataStack?
     
-    private var playing: Song?
-    private var playingQueue: [Song] = []
+    var isPlaying: Bool { (audioPlayer?.rate != 0) && (audioPlayer?.error == nil) }
+    
+    private(set) var playing: Song?
+    private(set) var playingQueue: [Song] = []
 
     // MARK: init
     func setup(coreDataStack: CoreDataStack) {
@@ -33,12 +35,28 @@ final class AudioManager: NSObject {
         
         self.savePlayedSong(song: song)
     }
+
+    func play() {
+        self.audioPlayer?.play()
+    }
+
+    func pause() {
+        self.audioPlayer?.pause()
+    }
     
-    private func pause() {
+    func stop() {
         self.audioPlayer?.pause()
         self.audioPlayer = nil
     }
-    
+
+    func next() {
+        self.stop()
+        if let song = self.playingQueue.first {
+            self.playingQueue.removeFirst()
+            self.play(song: song)
+        }
+    }
+
     func addToPlayingQueue(song: Song) {
         if self.playing == nil {
             self.play(song: song)
@@ -48,10 +66,11 @@ final class AudioManager: NSObject {
     }
 
     func addToPlayingQueue(songs: [Song]) {
-        if let song = songs.first {
+        var toAddSongs = songs
+        if let song = toAddSongs.first {
             self.addToPlayingQueue(song: song)
-            _ = songs.dropFirst()
-            self.playingQueue.append(contentsOf: songs)
+            toAddSongs.removeFirst()
+            self.playingQueue.append(contentsOf: toAddSongs)
         }
     }
     
@@ -75,7 +94,7 @@ extension AudioManager: AVAudioPlayerDelegate {
         self.playing = nil
         
         if let song = self.playingQueue.first {
-            _ = self.playingQueue.dropFirst()
+            _ = self.playingQueue.removeFirst()
             self.play(song: song)
         }
     }
